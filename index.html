@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Visualizer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<div class="container">
+  <h1>DSA <span>Visualizer</span></h1>
+  <p class="sub">Sorting Algorithms &bull; Linked List &bull; Stack &bull; Queue</p>
+  <div class="ds-sel">
+    <button class="db active" onclick="sw('bubble')">Bubble Sort</button>
+    <button class="db" onclick="sw('selection')">Selection Sort</button>
+    <button class="db" onclick="sw('insertion')">Insertion Sort</button>
+    <button class="db" onclick="sw('merge')">Merge Sort</button>
+    <button class="db" onclick="sw('linkedlist')">Linked List</button>
+    <button class="db" onclick="sw('stack')">Stack</button>
+    <button class="db" onclick="sw('queue')">Queue</button>
+  </div>
+  <div class="panel">
+    <!--Sorting Controls-->
+    <div class="ph" id="sh">
+      <span class="ptitle" id="st">Bubble Sort</span>
+      <input class="ci" id="si" type="text" placeholder="e.g. 42, 7, 19, 3, 88" style="flex:1;min-width:150px">
+      <button class="cb cp" onclick="loadArr()">Load</button>
+      <button class="cb cs" onclick="randArr()">Random</button>
+      <button class="cb ct" onclick="go()" id="sb">&#9654; Sort</button>
+      <button class="cb cd" onclick="resetSort()">Reset</button>
+      <div class="spd">Speed <input type="range" id="spd" min="1" max="10" value="5" step="1" oninput="document.getElementById('spv').textContent=this.value"> <span class="sv" id="spv">5</span></div>
+    </div>
+    <!--Linked List Controls-->
+    <div class="ph" id="lh" style="display:none">
+      <span class="ptitle">Linked List</span>
+      <input class="ci" id="li" type="number" placeholder="Value" style="width:90px">
+      <button class="cb cp" onclick="llApp()">Append</button>
+      <button class="cb" onclick="llPre()">Prepend</button>
+      <button class="cb" onclick="llDH()">Del Head</button>
+      <button class="cb" onclick="llDT()">Del Tail</button>
+      <button class="cb cd" onclick="llClr()">Clear</button>
+    </div>
+    <!--Stack Controls-->
+    <div class="ph" id="kh" style="display:none">
+      <span class="ptitle">Stack (LIFO)</span>
+      <input class="ci" id="ki" type="number" placeholder="Value" style="width:90px">
+      <button class="cb cp" onclick="skPush()">Push</button>
+      <button class="cb" onclick="skPop()">Pop</button>
+      <button class="cb ct" onclick="skPeek()">Peek</button>
+      <button class="cb cd" onclick="skClr()">Clear</button>
+    </div>
+    <!--Queue Controls-->
+    <div class="ph" id="qh" style="display:none">
+      <span class="ptitle">Queue (FIFO)</span>
+      <input class="ci" id="qi" type="number" placeholder="Value" style="width:90px">
+      <button class="cb cp" onclick="quEnq()">Enqueue</button>
+      <button class="cb" onclick="quDeq()">Dequeue</button>
+      <button class="cb ct" onclick="quPeek()">Peek Front</button>
+      <button class="cb cd" onclick="quClr()">Clear</button>
+    </div>
+    <!--Visualization Canvas-->
+    <div id="vc"><div class="empty">Choose a structure above to get started.</div></div>
+    <!--Legend-->
+    <div class="leg" id="leg">
+      <div class="li"><div class="ld" style="background:rgba(79,142,247,.55)"></div>Default</div>
+      <div class="li"><div class="ld" style="background:#f87171"></div>Comparing</div>
+      <div class="li"><div class="ld" style="background:#fb923c"></div>Swapping</div>
+      <div class="li"><div class="ld" style="background:#4ade80"></div>Sorted</div>
+      <div class="li"><div class="ld" style="background:#a78bfa"></div>Pivot</div>
+    </div>
+    <!--Log-->
+    <div id="log">Ready. Select a structure and enter values.</div>
+  </div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
