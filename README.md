@@ -3,10 +3,10 @@
 An interactive Data Structures & Algorithms Visualizer built using HTML, CSS, Bootstrap, and JavaScript. This project helps users understand how sorting algorithms and fundamental data structures work through real-time animations and visual feedback.
 Features:
 Sorting Algorithms:
- 1.Bubble Sort
- 2.Selection Sort
- 3.Insertion Sort
- 4.Merge Sort
+ 1. Bubble Sort
+ 2. Selection Sort
+ 3. Insertion Sort
+ 4. Merge Sort
  
 Data Structures:
   Linked List:
